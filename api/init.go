@@ -2,6 +2,7 @@ package controllers
 
 import (
 	m "table/models"
+	"utils"
 
 	"github.com/astaxie/beego"
 )
@@ -26,6 +27,7 @@ func Init(uid string) (res Response) {
 	beego.Info("建立表返回数据：", ud)
 	if ud != uid {
 		res.Info = "数据错误"
+		utils.WriteLog("数据错误")
 		return res
 	}
 	return res
